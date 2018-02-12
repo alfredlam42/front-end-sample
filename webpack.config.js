@@ -26,6 +26,10 @@ module.exports = {
             plugins: ['babel-plugin-transform-decorators'],
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
