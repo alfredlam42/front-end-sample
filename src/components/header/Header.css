@@ -1,0 +1,24 @@
+div.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  height: 50px;
+  width: 100%;
+
+  padding: 0 30px;
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #EEEEEE;
+}
+
+div.header > div.header-remove,
+div.header > div.header-menu {
+  display: flex;
+  align-items: center;
+}
+
+div.header > div.header-menu {
+  display: flex;
+  flex-direction: row;
+}

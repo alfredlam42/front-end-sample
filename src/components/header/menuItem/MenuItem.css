@@ -1,0 +1,10 @@
+div.header-menu-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+div.header-menu-item > div.menu-item-name.selected {
+  color: #409FFF;
+}
