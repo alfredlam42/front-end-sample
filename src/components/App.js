@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 // Custom Components
 import Header from './header/Header';
@@ -7,8 +8,15 @@ import SignupForm from './signupForm/SignupForm';
 // Style
 import './App.css';
 
+@connect((store) => {
+  return {
+    signupForm: store.signupForm,
+    tab: store.tab,
+  }
+})
 export default class App extends Component {
   render(){
+    console.log('props: ', this.props);
     return (
       <div className="signup-tab">
         <Header />
