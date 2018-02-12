@@ -1,0 +1,47 @@
+div.signup-form > form {
+  display: flex;
+  flex-direction: column;
+}
+
+div.signup-form > form > div.signup-subscriptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div.signup-form > form > input {
+  height: 40px;
+
+  padding: 14px 16px;
+  box-sizing: border-box;
+
+  border-radius: 4px;
+  border: 1px solid #CCCCCC;
+  outline: none;
+
+  margin: 4px 0;
+
+  font-size: 12px;
+}
+
+div.signup-form > form > div.signup-submit {
+  display: flex;
+  flex-direction: row;
+  margin: 24px 0;
+}
+
+div.signup-form > form > div.signup-submit > button {
+  flex: 2;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #CBD3DA;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+div.signup-form > form > div.signup-submit > div.signup-tos {
+  flex: 3;
+  padding: 0 18px;
+  box-sizing: border-box;
+  font-size: 12px;
+}
