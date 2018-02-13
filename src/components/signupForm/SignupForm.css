@@ -39,6 +39,11 @@ div.signup-form > form > div.signup-submit > button {
   color: #FFFFFF;
 }
 
+div.signup-form > form > div.signup-submit > button:focus {
+  outline: none;
+  border: 0;
+}
+
 div.signup-form > form > div.signup-submit > button.active {
   background-color: #409FFF;
 }

@@ -24,6 +24,8 @@ export default class SignupForm extends Component {
 
   _onClickButton(event){
     event.preventDefault();
+
+    console.log('asfd');
   }
 
   _onChangeInput(event){
@@ -99,7 +101,13 @@ export default class SignupForm extends Component {
           />
 
           <div className="signup-submit">
-            <button type="submit" className={this.getClassButton()}>Get Started</button>
+            <button
+              type="submit"
+              onClick={this._onClickButton.bind(this)}
+              className={this.getClassButton()}
+            >
+              Get Started
+            </button>
             <div className="signup-tos">
               By clicking this button, you agree to the&nbsp;
               <a href="#">Terms and conditions.</a>
