@@ -39,6 +39,10 @@ div.signup-form > form > div.signup-submit > button {
   color: #FFFFFF;
 }
 
+div.signup-form > form > div.signup-submit > button.active {
+  background-color: #409FFF;
+}
+
 div.signup-form > form > div.signup-submit > div.signup-tos {
   flex: 3;
   padding: 0 18px;

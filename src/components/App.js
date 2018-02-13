@@ -16,7 +16,6 @@ import './App.css';
 })
 export default class App extends Component {
   render(){
-    console.log('props: ', this.props);
     return (
       <div className="signup-tab">
         <Header />
@@ -30,7 +29,7 @@ export default class App extends Component {
               <a href="#">Log in here</a>
             </div>
 
-            <SignupForm />
+            <SignupForm {...this.props.signupForm} dispatch={this.props.dispatch} />
           </div>
         </div>
       </div>

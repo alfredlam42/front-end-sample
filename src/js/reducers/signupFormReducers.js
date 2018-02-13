@@ -14,7 +14,7 @@ export default function reducer(state={
     case 'UPDATE_PASSWORD': {
       return {...state, password: action.payload};
     }
-    case 'UPDATE_SUBSCTIPTION':{
+    case 'UPDATE_SUBSCRIPTION':{
       return {...state, subscription: action.payload};
     }
     default: {

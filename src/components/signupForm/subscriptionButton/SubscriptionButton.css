@@ -6,6 +6,7 @@ div.subscription-button {
   background-color: #CBD3DA;
   border-radius: 4px;
   margin: 16px 0;
+  cursor: pointer;
 }
 
 div.subscription-button.selected {
