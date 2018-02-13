@@ -26,7 +26,8 @@ export default class SubscriptionButton extends Component {
     return (
       <div
         className={isSelected ? 'subscription-button selected' : 'subscription-button'}
-        onClick={this._onClick.bind(this)}>
+        onClick={this._onClick.bind(this)}
+      >
         <div className="radio-space">{this.renderCheck(isSelected)}</div>
         <div className="subscription-type">{this.props.subscriptionType}</div>
         <div className="subscription-price">$ {this.props.price}</div>
