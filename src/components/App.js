@@ -33,9 +33,7 @@ export default class App extends Component {
         <Header />
 
         <div className="signup-body">
-          <div className="signup-body-wrapper">
-            {this.displaySignupBody()}
-          </div>
+          {this.displaySignupBody()}
         </div>
       </div>
     )

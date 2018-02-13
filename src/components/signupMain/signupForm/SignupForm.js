@@ -106,7 +106,7 @@ export default class SignupForm extends Component {
             type="password"
             name="password"
             onChange={this._onChangeInput.bind(this)}
-            placeholder="Password"
+            placeholder="Password (min. 8)"
             value={this.props.formData.password}
           />
 

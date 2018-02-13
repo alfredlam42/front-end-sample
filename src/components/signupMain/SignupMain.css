@@ -1,29 +1,57 @@
+div.signup-body-main {
+  width: 50%;
+}
 
-div.signup-tab > div.signup-body > div.signup-body-wrapper > div.signup-body-main {
+div.signup-body-main > div.signup-body-main-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   height: 100%;
 }
 
-
-div.signup-tab > div.signup-body > div.signup-body-wrapper > div.signup-body-main > div.signup-title {
+div.signup-body-main > div.signup-body-main-wrapper > div.signup-title {
   font-size: 22px;
   margin-bottom: 15px;
   text-align: center;
 }
 
-div.signup-tab > div.signup-body > div.signup-body-wrapper > div.signup-body-main > div.signup-text {
+div.signup-body-main > div.signup-body-main-wrapper > div.signup-text {
   font-size: 14px;
   text-align: center;
   margin-bottom: 25px;
 }
 
+@media only screen and (max-height: 480px){
+  div.signup-body-main > div.signup-body-main-wrapper {
+    display: block;
+    height: auto;
+    padding: 20px;
+  }
+}
+
 @media only screen and (max-width: 768px){
-  div.signup-tab > div.signup-body > div.signup-body-wrapper > div.signup-body-main {
+  div.signup-body-main {
     justify-content: flex-start;
-    padding-top: 10%;
     box-sizing: border-box;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  div.signup-body-main {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 703px){
+  div.signup-body-main {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 414px){
+  div.signup-body-main {
+    width: 90%;
   }
 }
