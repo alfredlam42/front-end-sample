@@ -19,7 +19,6 @@ import './App.css';
 export default class App extends Component {
   displaySignupBody(){
     const { postStatus } = this.props;
-    console.log('postStatus: ', postStatus);
 
     if (!postStatus){
       return <SignupMain formData={this.props.formData} dispatch={this.props.dispatch} />
