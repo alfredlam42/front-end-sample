@@ -13,7 +13,12 @@ export default class SignupForm extends Component {
   validateFormData(){
     const { name, email, password, subscription } = this.props.formData;
 
-    return name && email && password && subscription ? true : false;
+    const isNameValid = name.length > 0;
+    const isEmailValid = email.search(/@.+\..{2,}/) !== -1;
+    const isPasswordValid = password.length > 8;
+    const isSubscriptionValid = subscription !== '';
+
+    return isNameValid && isEmailValid && isPasswordValid && isSubscriptionValid ? true : false;
   }
 
   getClassButton(){
