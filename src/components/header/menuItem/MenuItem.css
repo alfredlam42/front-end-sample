@@ -3,8 +3,9 @@ div.header-menu-item {
   align-items: center;
   height: 100%;
   padding: 0 20px;
+  cursor: pointer;
 }
 
-div.header-menu-item > div.menu-item-name.selected {
+div.header-menu-item.selected {
   color: #409FFF;
 }

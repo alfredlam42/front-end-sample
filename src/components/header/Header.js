@@ -8,7 +8,22 @@ import MenuItem from './menuItem/MenuItem';
 import './Header.css';
 
 export default class Header extends Component {
+  renderMenuItems(menuItems){
+    const currentTab = this.props.currentTab;
+
+    return menuItems.map((itemName) => {
+      return (
+        <MenuItem
+          key={itemName}
+          menuItemName={itemName}
+        />
+      )
+    })
+  }
+
   render(){
+    const menuItems = ['Pricing', 'About Us', 'Home'];
+
     return (
       <div className="header">
         <div className="header-remove">
@@ -16,9 +31,7 @@ export default class Header extends Component {
         </div>
 
         <div className="header-menu">
-          <MenuItem menuItemName='Pricing' />
-          <MenuItem menuItemName='About Us' />
-          <MenuItem menuItemName='Home' />
+          {this.renderMenuItems(menuItems)}
         </div>
       </div>
     )
