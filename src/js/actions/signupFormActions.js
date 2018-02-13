@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export function updateName(name){
   return {
     type: 'UPDATE_NAME',
@@ -23,5 +25,17 @@ export function updateSubscription(subscription){
   return {
     type: 'UPDATE_SUBSCRIPTION',
     payload: subscription
+  }
+}
+
+export function postData(formData){
+  return function(dispatch){
+    axios.post('https://jsonplaceholder.typicode.com/posts', formData)
+    .then((response) => {
+      dispatch({type: 'POST_SUCCESS'});
+    })
+    .catch((error) => {
+      dispatch({type: 'POST_FAIL'});
+    })
   }
 }

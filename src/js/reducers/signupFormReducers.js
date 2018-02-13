@@ -1,21 +1,51 @@
 export default function reducer(state={
-  name: '',
-  email: '',
-  password: '',
-  subscription: '',
+  formData: {
+    name: '',
+    email: '',
+    password: '',
+    subscription: '',
+  },
+  postStatus: null
 }, action){
   switch(action.type){
     case 'UPDATE_NAME': {
-      return {...state, name: action.payload};
+      return {
+        ...state,
+        formData: {...state.formData, name: action.payload}
+      };
     }
     case 'UPDATE_EMAIL': {
-      return {...state, email: action.payload};
+      return {
+        ...state,
+        formData: {...state.formData, email: action.payload}
+      };
     }
     case 'UPDATE_PASSWORD': {
-      return {...state, password: action.payload};
+      return {
+        ...state,
+        formData: {...state.formData, password: action.payload}
+      };
     }
-    case 'UPDATE_SUBSCRIPTION':{
-      return {...state, subscription: action.payload};
+    case 'UPDATE_SUBSCRIPTION': {
+      return {
+        ...state,
+        formData: {...state.formData, subscription: action.payload}
+      };
+    }
+    case 'POST_SUCCESS': {
+      return {
+        ...state,
+        formData: {
+          name: '',
+          email: '',
+          password: '',
+          subscription: ''
+        },
+        postStatus: 'SUCCESS'
+      };
+    }
+    case 'POST_FAIL': {
+      return {...state, postStatus: 'FAIL'}
     }
     default: {
       return state;

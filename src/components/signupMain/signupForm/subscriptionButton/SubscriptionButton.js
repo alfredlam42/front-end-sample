@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 
 // Helpers
-import { updateSubscription } from '../../../js/actions/signupFormActions';
+import { updateSubscription } from '../../../../js/actions/signupFormActions';
 
 // Style
 import './SubscriptionButton.css';

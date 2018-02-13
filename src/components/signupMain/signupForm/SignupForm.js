@@ -4,14 +4,14 @@ import React, { Component } from 'react';
 import SubscriptionButton from './subscriptionButton/SubscriptionButton';
 
 // Helpers
-import * as form from '../../js/actions/signupFormActions';
+import * as form from '../../../js/actions/signupFormActions';
 
 // Style
 import './SignupForm.css';
 
 export default class SignupForm extends Component {
   validateFormData(){
-    const { name, email, password, subscription } = this.props;
+    const { name, email, password, subscription } = this.props.formData;
 
     return name && email && password && subscription ? true : false;
   }
@@ -25,7 +25,14 @@ export default class SignupForm extends Component {
   _onClickButton(event){
     event.preventDefault();
 
-    console.log('asfd');
+    const dataIsValid = this.validateFormData();
+
+    if (dataIsValid){
+      this.props.dispatch(form.postData(this.props.formData))
+    } else {
+      console.log('form data is invalid');
+      // dispatch error
+    }
   }
 
   _onChangeInput(event){
@@ -52,8 +59,6 @@ export default class SignupForm extends Component {
   }
 
   render(){
-    const currentSubscription = this.props.subscription;
-
     return (
       <div className="signup-form">
         <form>
@@ -63,7 +68,7 @@ export default class SignupForm extends Component {
               price="172"
               savings="Save 20% - $ 3.66 per month"
               caption="Yearly Subscription"
-              currentSubscription={this.props.subscription}
+              currentSubscription={this.props.formData.subscription}
               dispatch={this.props.dispatch}
             />
 
@@ -71,7 +76,7 @@ export default class SignupForm extends Component {
               subscriptionType="Monthly"
               price="18"
               caption="Monthly Subscription"
-              currentSubscription={this.props.subscription}
+              currentSubscription={this.props.formData.subscription}
               dispatch={this.props.dispatch}
             />
           </div>
@@ -81,7 +86,7 @@ export default class SignupForm extends Component {
             name="name"
             onChange={this._onChangeInput.bind(this)}
             placeholder="Full Name"
-            value={this.props.name}
+            value={this.props.formData.name}
           />
 
           <input
@@ -89,7 +94,7 @@ export default class SignupForm extends Component {
             name="email"
             onChange={this._onChangeInput.bind(this)}
             placeholder="Email"
-            value={this.props.email}
+            value={this.props.formData.email}
           />
 
           <input
@@ -97,7 +102,7 @@ export default class SignupForm extends Component {
             name="password"
             onChange={this._onChangeInput.bind(this)}
             placeholder="Password"
-            value={this.props.password}
+            value={this.props.formData.password}
           />
 
           <div className="signup-submit">

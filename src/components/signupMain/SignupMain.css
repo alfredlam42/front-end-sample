@@ -1,0 +1,21 @@
+
+div.signup-tab > div.signup-body > div.signup-body-wrapper > div.signup-body-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100%;
+}
+
+
+div.signup-tab > div.signup-body > div.signup-body-wrapper > div.signup-body-main > div.signup-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+div.signup-tab > div.signup-body > div.signup-body-wrapper > div.signup-body-main > div.signup-text {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 25px;
+}

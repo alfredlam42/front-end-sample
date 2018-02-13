@@ -3,18 +3,31 @@ import { connect } from 'react-redux';
 
 // Custom Components
 import Header from './header/Header';
-import SignupForm from './signupForm/SignupForm';
+import SignupMain from './signupMain/SignupMain';
+import SignupSuccess from './signupSuccess/SignupSuccess';
 
 // Style
 import './App.css';
 
 @connect((store) => {
   return {
-    signupForm: store.signupForm,
+    formData: store.signupForm.formData,
+    postStatus: store.signupForm.postStatus,
     tab: store.tab,
   }
 })
 export default class App extends Component {
+  displaySignupBody(){
+    const { postStatus } = this.props;
+    console.log('postStatus: ', postStatus);
+
+    if (!postStatus){
+      return <SignupMain formData={this.props.formData} dispatch={this.props.dispatch} />
+    } else {
+      return <SignupSuccess />;
+    }
+  }
+
   render(){
     return (
       <div className="signup-tab">
@@ -22,14 +35,7 @@ export default class App extends Component {
 
         <div className="signup-body">
           <div className="signup-body-wrapper">
-            <div className="signup-title">Sign up for Team account</div>
-
-            <div className="signup-text">
-              Create an account to keep track of your customers, and contributors. Already have an account?&nbsp;
-              <a href="#">Log in here</a>
-            </div>
-
-            <SignupForm {...this.props.signupForm} dispatch={this.props.dispatch} />
+            {this.displaySignupBody()}
           </div>
         </div>
       </div>
